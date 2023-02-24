@@ -2,9 +2,19 @@ export const validateForm = (values) => {
   const errors = {};
   const validPhone = /^(?:(\+\d+)[ -])?\(?\d{3}\)?[ -]?(\d{3})[ -]?(\d{4})$/g;
   const validEmail = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z.]+$/i;
-  const validName = /^[a-z-]$/i;
+  const validName = /^[a-z-]+$/i;
 
-  if()
+  if (!values.firstName) {
+    errors.firstName = "Required";
+  } else if (!validName.test(values.firstName)) {
+    errors.firstName = "Hold up... is that your name, fr fr?";
+  }
+
+  if (!values.lastName) {
+    errors.lastName = "Required";
+  } else if (!validName.test(values.lastName)) {
+    errors.lastName = "Hold up... is that your name, fr fr?";
+  }
 
   if (!values.email) {
     errors.email = "Required";
