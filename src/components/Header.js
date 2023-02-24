@@ -11,7 +11,7 @@ const Header = (props) => {
       <div className="header-btn-container" style={{display: {display}}}>
         <button className="btn header-btn header-subscribe bg-white">Subscribe</button>
         <button className="btn header-btn header-book bg-primary">Book Kevin</button>
-      </div>
+      </div> 
      </div>
 
     </Container>

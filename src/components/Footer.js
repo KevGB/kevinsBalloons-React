@@ -12,33 +12,33 @@ const Footer = () => {
             <h6>Links</h6>
             <ul className="list-unstyled">
               <li>
-                <Link to="/">Home</Link>
+                <div to="/">Home</div>
               </li>
               <li>
-                <Link to="/contact">Contact</Link>
+                <div to="/contact">Contact</div>
               </li>
               <li>
-                <Link to="/services">Services</Link>
+                <div to="/services">Services</div>
               </li>
               <li>
                 <ul>
                   <li>
-                    <Link to="/book">Balloon Twisting</Link>
+                    <div to="/book">Balloon Twisting</div>
                   </li>
                   <li>
-                    <Link to="/arches">Balloon Arches</Link>
+                    <div to="/arches">Balloon Arches</div>
                   </li>
                   <li>
-                    <Link to="/garlands">Balloon Garlands</Link>
+                    <div to="/garlands">Balloon Garlands</div>
                   </li>
                   <li>
-                    <Link to="/clusters">Balloon Clusters</Link>
+                    <div to="/clusters">Balloon Clusters</div>
                   </li>
                   <li>
-                    <Link to="/deliverables">Deliverables</Link>
+                    <div to="/deliverables">Deliverables</div>
                   </li>
                   <li>
-                    <Link to="/centerpieces">Centerpieces</Link>
+                    <div to="/centerpieces">Centerpieces</div>
                   </li>
                 </ul>
               </li>
