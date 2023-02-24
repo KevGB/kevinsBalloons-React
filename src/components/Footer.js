@@ -1,5 +1,7 @@
+import React from "react";
 import { Link } from "react-router-dom";
 import { Container, Row, Col } from "reactstrap";
+import "./css/Footer.css";
 
 const Footer = () => {
   return (
@@ -24,19 +26,19 @@ const Footer = () => {
                     <Link to="/book">Balloon Twisting</Link>
                   </li>
                   <li>
-                    <Link to='/arches'>Balloon Arches</Link>
+                    <Link to="/arches">Balloon Arches</Link>
                   </li>
                   <li>
-                    <Link to='/garlands'>Balloon Garlands</Link>
+                    <Link to="/garlands">Balloon Garlands</Link>
                   </li>
                   <li>
-                    <Link to='/clusters'>Balloon Clusters</Link>
+                    <Link to="/clusters">Balloon Clusters</Link>
                   </li>
                   <li>
-                    <Link to='/deliverables'>Deliverables</Link>
+                    <Link to="/deliverables">Deliverables</Link>
                   </li>
                   <li>
-                    <Link to='/centerpieces'>Centerpieces</Link>
+                    <Link to="/centerpieces">Centerpieces</Link>
                   </li>
                 </ul>
               </li>
