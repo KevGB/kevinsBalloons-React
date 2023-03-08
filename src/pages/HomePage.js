@@ -1,9 +1,10 @@
 import Header from "../components/Header";
-import Footer from "../components/Footer";
-import Navigation from "../components/Navigation";
 
 const HomePage = () => {
-  return <div>Home Page</div>;
+  return (
+    <Header  headline={"Kevin's Balloons"} tagline={"San Francisco's Globally-Demanded Balloon Artist"} display={true} />
+
+  );
 };
 
 export default HomePage;

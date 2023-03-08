@@ -1,4 +1,4 @@
-import { Navbar, NavbarBrand, Nav, NavItem } from "reactstrap";
+import { Navbar, NavbarBrand, Nav, NavItem , NavLink} from "reactstrap";
 import Logo from "../assets/img/BowtieLogo.png";
 
 const Navigation = () => {
@@ -9,14 +9,14 @@ const Navigation = () => {
           <img src={Logo} alt="Kevin's Balloons Logo" className="logo" />
         </NavbarBrand>
         <NavItem>
-          <div className="nav-link" to="/book">
+          <NavLink className="nav-link" to="/book">
             Book
-          </div>
+          </NavLink>
         </NavItem>
         <NavItem>
-          <div className="nav-link" to="/contact">
+          <NavLink className="nav-link" to="/contact">
             Contact
-          </div>
+          </NavLink>
         </NavItem>
       </Nav>
     </Navbar>

@@ -1,9 +1,9 @@
 import Header from "../components/Header";
-import Footer from "../components/Footer";
-import Navigation from "../components/Navigation";
+
 
 const ThankYouPage = () => {
-  return <div>Thank You Page</div>;
+  return <Header  headline={"Thank you for Booking!"} tagline={"San Francisco's Globally-Demanded Balloon Artist"} display={true} />
+
 };
 
 export default ThankYouPage;

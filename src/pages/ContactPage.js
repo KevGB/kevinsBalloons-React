@@ -1,9 +1,9 @@
 import Header from "../components/Header";
-import Footer from "../components/Footer";
-import Navigation from "../components/Navigation";
+
 
 const ContactPage = () => {
-  return <div>Contact Page</div>;
+  return     <Header  headline={"Contact Us"} tagline={"San Francisco's Globally-Demanded Balloon Artist"} display={true} />
+
 };
 
 export default ContactPage;
