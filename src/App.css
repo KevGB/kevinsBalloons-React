@@ -67,14 +67,3 @@
 h1{
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
-
-.flower-image{
-  background-image: url("./assets/img/garland-flowered.jpg");
-  background-position: right;
-  max-height: 65vh;
-  
-}
-
-.k{
-  border: 1px solid red;
-}

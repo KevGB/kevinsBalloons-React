@@ -1,22 +1,28 @@
 import React from "react";
-import Footer from "./components/Footer";
-import Navigation from "./components/Navigation";
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
-import HomePage from "./pages/HomePage";
+import StartForm from "./pages/StartForm";
+import DurationForm from "./pages/DurationForm";
+import WhenForm from "./pages/WhenForm";
+import WhereForm from "./pages/WhereForm";
+import GuestsForm from "./pages/GuestForm";
+import PersonalInfo from "./pages/PersonalInfo";
 import ThankYouPage from "./pages/ThankYouPage";
-import ContactPage from "./pages/ContactPage";
+import Navigation from "./components/Navigation";
 
 function App() {
   return (
     <div className="App">
-      <Navigation />
+      <Navigation/>
       <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/contact" element={<ContactPage />} />
+        <Route path="/" element={<StartForm />} />
+        <Route path="/duration" element={<DurationForm />} />
+        <Route path="/when" element={<WhenForm />} />
+        <Route path="/where" element={<WhereForm />} />
+        <Route path="/guests" element={<GuestsForm />} />
+        <Route path="/info" element={<PersonalInfo />} />
         <Route path="/thankyou" element={<ThankYouPage />} />
       </Routes>
-      <Footer />
     </div>
   );
 }
