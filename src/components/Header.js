@@ -1,10 +1,11 @@
 import { Container } from "reactstrap";
+import background from '../assets/img/garland-flowered.jpg'
 
 const Header = (props) => {
-  const {image, headline, tagline, display} = props;
+  const { headline, tagline, display} = props;
 
   return (
-    <Container className="container-fluid header" style={{backgroundImage: `URL(${image})`}}>
+    <Container className="container-fluid header flower-image" >
      <div className="overlay">
       <h1>{headline}</h1>
       <p>{tagline}</p>
@@ -19,3 +20,4 @@ const Header = (props) => {
 };
 
 export default Header;
+

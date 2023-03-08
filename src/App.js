@@ -8,11 +8,12 @@ import HomePage from "./pages/HomePage";
 import ThankYouPage from "./pages/ThankYouPage";
 import ContactPage from "./pages/ContactPage";
 
+
 function App() {
   return (
-    <div className="App">
+    <div className="App k">
       <Navigation />
-      <Header />
+      <Header  headline={"Kevin's Balloons"} tagline={"San Francisco's Globally-Demanded Balloon Artist"} display={true} />
       {/* <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/contact" element={<ContactPage />} />
