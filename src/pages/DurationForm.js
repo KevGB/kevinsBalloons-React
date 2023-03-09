@@ -45,6 +45,8 @@ const DurationForm = () => {
           <ErrorMessage name="duration">
             {(msg) => <p className="text-danger ">{msg}</p>}
           </ErrorMessage>
+        </Form>
+      </Formik>
           <p className="faq-btn">
             <a href="#0" onClick={handleClick}>
               FAQ: How much time should I book?
@@ -56,8 +58,6 @@ const DurationForm = () => {
               Next{" "}
             </button>
           </Link>
-        </Form>
-      </Formik>
       <div className="form-navigation">
         <Link to="/">
           <i className="fa fa-solid fa-circle " />

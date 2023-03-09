@@ -28,14 +28,18 @@ const WhenForm = () => {
             </ErrorMessage>
           </FormGroup>
         </Form>
-        <p><a href="#0" onClick={handleClick}>FAQ: What is Kevin's Availability?</a></p>
-        {faqShow && <FAQAvailability/>}
-      <Link className="nav-link" to="/where">
-        <button className="btn btn-primary" type="submit">
-          Next{" "}
-        </button>
-      </Link>
       </Formik>
+        <p>
+          <a href="#0" onClick={handleClick}>
+            FAQ: What is Kevin's Availability?
+          </a>
+        </p>
+        {faqShow && <FAQAvailability />}
+        <Link className="nav-link" to="/where">
+          <button className="btn btn-primary" type="submit">
+            Next{" "}
+          </button>
+        </Link>
 
       <div className="form-navigation">
         <Link to="/">
