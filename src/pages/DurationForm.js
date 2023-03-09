@@ -4,15 +4,23 @@ import "../App.css";
 import { Link } from "react-router-dom";
 import { FAQDuration } from "../components/FAQDuration";
 
+const initialValues = {
+  duration: "",
+};
 const DurationForm = () => {
   const [faqShow, toggleFaqShow] = useState(false);
+  const [formValue, setFormValue] = useState(initialValues);
+  const { duration } = formValue;
 
   const handleClick = () => {
     toggleFaqShow(!faqShow);
   };
 
   const handleChange = () => {
-    console.log(Field.value);
+    setFormValue({
+      duration,
+    });
+    console.log(formValue);
   };
 
   return (
@@ -25,6 +33,7 @@ const DurationForm = () => {
             as="select"
             name="duration"
             className="form-control"
+            value={duration}
             onChange={handleChange}
           >
             <option value=""></option>
@@ -47,17 +56,17 @@ const DurationForm = () => {
           </ErrorMessage>
         </Form>
       </Formik>
-          <p className="faq-btn">
-            <a href="#0" onClick={handleClick}>
-              FAQ: How much time should I book?
-            </a>
-          </p>
-          {faqShow && <FAQDuration />}
-          <Link className="nav-link" to="/when">
-            <button className="btn btn-primary" type="submit">
-              Next{" "}
-            </button>
-          </Link>
+      <p className="faq-btn">
+        <a href="#0" onClick={handleClick}>
+          FAQ: How much time should I book?
+        </a>
+      </p>
+      {faqShow && <FAQDuration />}
+      <Link className="nav-link" to="/when">
+        <button className="btn btn-primary" type="submit">
+          Next{" "}
+        </button>
+      </Link>
       <div className="form-navigation">
         <Link to="/">
           <i className="fa fa-solid fa-circle " />

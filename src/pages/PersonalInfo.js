@@ -12,7 +12,6 @@ const initialValues = {
   email: "",
   phone: "",
   instagram: "",
-  tandc: false,
 };
 
 const PersonalInfo = () => {
