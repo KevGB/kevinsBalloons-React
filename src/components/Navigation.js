@@ -1,4 +1,5 @@
-import { Navbar, NavbarBrand, Nav, NavItem , NavLink} from "reactstrap";
+import { Navbar, NavbarBrand, Nav, NavItem } from "reactstrap";
+import {NavLink} from "react-router-dom";
 import Logo from "../assets/img/BowtieLogo.png";
 
 

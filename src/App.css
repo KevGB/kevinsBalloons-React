@@ -38,25 +38,24 @@
   rotate: -6deg;
 }
 
-.header-btn-container{
-    display: flex;
-    justify-content: space-between;
+.header-btn-container {
+  display: flex;
+  justify-content: space-between;
 }
 
-.header-btn{
-    border-radius: 5px;
+.header-btn {
+  border-radius: 5px;
 }
 
-
-.site-footer{
+.site-footer {
   background-color: #ffb200;
 }
 
-.logo{
-  max-height:70px;
+.logo {
+  max-height: 70px;
 }
 
-.navbar{
+.navbar {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -64,6 +63,63 @@
   padding-left: 40px;
 }
 
-h1{
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+h1 {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+    color: #ffb200;
+    font-weight: bold;
+}
+
+.KB-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 300px;
+  justify-self: center;
+}
+
+.form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.field {
+  margin-bottom: 10px;
+  margin-top: 0;
+  
+}
+
+.small-text {
+  font-size: 10px;
+  margin-bottom: 0;
+}
+
+.fa{
+  margin: 12px 6px;
+}
+
+.fa-solid{
+  color:#03a5b6;
+}
+
+.not-yet{
+  color:#ffb200;
+
+}
+
+.form-navigation-active{
+box-shadow: 0 0 5px 1px #ffcf00 ;
+ border-radius: 50%;
+}
+
+.text-danger{
+  font-size: 12px;
+  margin-top: -10px;
+  margin-bottom: 0;
+}
+
+.next-button{
+  background-color: #03a5b6;
+  font-size: 200px;
 }

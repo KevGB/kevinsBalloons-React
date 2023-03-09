@@ -16,12 +16,12 @@ function App() {
       <Navigation/>
       <Routes>
         <Route path="/" element={<StartForm />} />
-        <Route path="/duration" element={<DurationForm />} />
-        <Route path="/when" element={<WhenForm />} />
-        <Route path="/where" element={<WhereForm />} />
-        <Route path="/guests" element={<GuestsForm />} />
-        <Route path="/info" element={<PersonalInfo />} />
-        <Route path="/thankyou" element={<ThankYouPage />} />
+        <Route path="duration" element={<DurationForm />} />
+        <Route path="when" element={<WhenForm />} />
+        <Route path="where" element={<WhereForm />} />
+        <Route path="guests" element={<GuestsForm />} />
+        <Route path="info" element={<PersonalInfo />} />
+        <Route path="thankyou" element={<ThankYouPage />} />
       </Routes>
     </div>
   );
