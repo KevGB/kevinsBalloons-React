@@ -3,7 +3,8 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 // import { validateForm } from "./validateForm";
 import "../App.css";
 import { Link } from "react-router-dom";
-import { Label } from "reactstrap";
+import { Label, FormGroup } from "reactstrap";
+import { TandC } from "../components/TandC";
 
 const initialValues = {
   firstName: "",
@@ -16,6 +17,7 @@ const initialValues = {
 
 const PersonalInfo = () => {
   const [formValues, updateFormValues] = useState(initialValues);
+  const [tandcShow, toggleTandcShow] = useState(false);
   const { firstName, lastName, email, phone, instagram } = formValues;
 
   const handleSubmit = (e) => {
@@ -30,6 +32,10 @@ const PersonalInfo = () => {
     });
   };
 
+  const handleClick = () => {
+    toggleTandcShow(!tandcShow);
+  };
+
   return (
     <div className="form">
       <h1>Tell us about yourself</h1>
@@ -41,6 +47,7 @@ const PersonalInfo = () => {
         onSubmit={handleSubmit}
       >
         <Form className="KB-form">
+          
           <Field
             type="text"
             name="firstName"
@@ -48,6 +55,7 @@ const PersonalInfo = () => {
             placeholder="First Name"
             onChange={handleChange}
             className="form-control field"
+            
           />
           <ErrorMessage name="firstName">
             {(msg) => <p className="text-danger">{msg}</p>}
@@ -104,10 +112,12 @@ const PersonalInfo = () => {
               // value={tandc}
               className="form-check-input"
             />{" "}
-            Do you agree to our T&C?
+            Do you agree to our <a href="#0" onClick={handleClick}>T&C</a>?
+          
             <ErrorMessage name="tandc">
               {(msg) => <p className="text-danger">{msg}</p>}
             </ErrorMessage>
+            {tandcShow && <TandC/>}
           </Label>
           <Link className="nav-link" to="/thankyou">
             <button className="btn btn-primary" type="submit">
@@ -133,7 +143,7 @@ const PersonalInfo = () => {
           <i className="fa fa-solid fa-circle" />
         </Link>
         <Link to="/info">
-          <i className="fa fa-circle form-navigation-active" />
+          <i className="fa fa-solid fa-circle form-navigation-active" />
         </Link>
       </div>
     </div>

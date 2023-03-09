@@ -1,6 +1,13 @@
 import { Link } from "react-router-dom";
 const StartForm = () => {
   return (
+    <>
+    <div>Let's Start</div>
+    <Link className="nav-link" to="/duration">
+            <button className="btn btn-primary" type="submit">
+              Let's get this party started!
+            </button>
+          </Link>
     <div className="form-navigation">
       <Link to="/">
         <i className="fa fa-solid fa-circle form-navigation-active" />
@@ -21,6 +28,7 @@ const StartForm = () => {
         <i className="fa fa-circle not-yet" />
       </Link>
     </div>
+    </>
   );
 };
 
