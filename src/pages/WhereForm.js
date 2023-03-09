@@ -31,6 +31,14 @@ const WhereForm = () => {
     console.log(formValues);
   };
 
+  const handleChange = (e) => {
+    console.log(e.target.value);
+    updateFormValues({
+      ...formValues,
+      [e.target.name]: e.target.value,
+    });
+  };
+
   return (
     <div className="form">
       <h1>Tell us about your event</h1>
@@ -44,6 +52,7 @@ const WhereForm = () => {
               placeholder="Address"
               value={address}
               className="form-control"
+              onChange={handleChange}
             />
             <Field
               name="addressTwo"
@@ -51,6 +60,7 @@ const WhereForm = () => {
               placeholder=""
               value={addressTwo}
               className="form-control"
+              onChange={handleChange}
             />
             <div style={{ display: "flex" }}>
               <Field
@@ -59,6 +69,7 @@ const WhereForm = () => {
                 placeholder="city"
                 value={city}
                 className="form-control"
+                onChange={handleChange}
               />
               <Field
                 name="state"
@@ -66,6 +77,7 @@ const WhereForm = () => {
                 placeholder="State"
                 value={state}
                 className="form-control"
+                onChange={handleChange}
               />
               <Field
                 name="country"
@@ -73,6 +85,7 @@ const WhereForm = () => {
                 placeholder="Country"
                 value={country}
                 className="form-control"
+                onChange={handleChange}
               />
             </div>
           </FormGroup>
@@ -83,6 +96,7 @@ const WhereForm = () => {
               name="locationType"
               value={locationType}
               className="form-control"
+              onChange={handleChange}
             >
               <option value=""></option>
               <option value="house">House</option>
@@ -102,6 +116,7 @@ const WhereForm = () => {
               value={specification}
               className="form-control"
               placeholder="ex: Yacht, Water Park, Chocolate Factory"
+              onChange={handleChange}
             />
           </FormGroup>
           <FormGroup>
@@ -111,6 +126,7 @@ const WhereForm = () => {
             name="parking"
             value={parking}
             className="form-control"
+            onChange={handleChange}
             />
           </FormGroup>
         </Form>
