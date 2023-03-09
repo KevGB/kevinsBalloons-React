@@ -43,7 +43,7 @@ const WhereForm = () => {
     <div className="form">
       <h1>Tell us about your event</h1>
       <Formik onSubmit={handleSubmit}>
-        <Form>
+        <Form className="KB-form">
           <FormGroup>
             <Label>Where is your event?</Label>
             <Field
@@ -51,7 +51,7 @@ const WhereForm = () => {
               type="text"
               placeholder="Address"
               value={address}
-              className="form-control"
+              className="form-control field"
               onChange={handleChange}
             />
             <Field
@@ -59,7 +59,7 @@ const WhereForm = () => {
               type="text"
               placeholder=""
               value={addressTwo}
-              className="form-control"
+              className="form-control field"
               onChange={handleChange}
             />
             <div style={{ display: "flex" }}>
@@ -68,7 +68,7 @@ const WhereForm = () => {
                 type="text"
                 placeholder="city"
                 value={city}
-                className="form-control"
+                className="form-control field"
                 onChange={handleChange}
               />
               <Field
@@ -76,7 +76,7 @@ const WhereForm = () => {
                 type="text"
                 placeholder="State"
                 value={state}
-                className="form-control"
+                className="form-control field"
                 onChange={handleChange}
               />
               <Field
@@ -84,18 +84,17 @@ const WhereForm = () => {
                 type="text"
                 placeholder="Country"
                 value={country}
-                className="form-control"
+                className="form-control field"
                 onChange={handleChange}
               />
             </div>
-          </FormGroup>
-          <FormGroup>
+          
             <Label>What type of location is this?</Label>
             <Field
               as="select"
               name="locationType"
               value={locationType}
-              className="form-control"
+              className="form-control field"
               onChange={handleChange}
             >
               <option value=""></option>
@@ -114,18 +113,17 @@ const WhereForm = () => {
               type="text"
               name="specification"
               value={specification}
-              className="form-control"
+              className="form-control field"
               placeholder="ex: Yacht, Water Park, Chocolate Factory"
               onChange={handleChange}
             />
-          </FormGroup>
-          <FormGroup>
+         
             <Label>What parking is available?</Label>
             <Field
             as="textarea"
             name="parking"
             value={parking}
-            className="form-control"
+            className="form-control field"
             onChange={handleChange}
             />
           </FormGroup>

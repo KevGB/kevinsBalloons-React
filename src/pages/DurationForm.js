@@ -16,11 +16,12 @@ const DurationForm = () => {
     toggleFaqShow(!faqShow);
   };
 
-  const handleChange = () => {
+  const handleChange = (e) => {
+    console.log(e.target.value);
     setFormValue({
-      duration,
+      ...formValue,
+      [e.target.name]: e.target.value,
     });
-    console.log(formValue);
   };
 
   return (
@@ -28,15 +29,16 @@ const DurationForm = () => {
       <h1>Tell us about your event</h1>
       <div>How long would you like Kevin to perform at your event?</div>
       <Formik>
-        <Form>
+        <Form className="KB-form">
           <Field
             as="select"
             name="duration"
-            className="form-control"
+            className="form-control field"
             value={duration}
             onChange={handleChange}
+            style={{ width: "400px" }}
           >
-            <option value=""></option>
+            <option value="">Select the number of hours</option>
             <option value="1">1 hour</option>
             <option value="1.5">1.5 hours</option>
             <option value="2">2 hours</option>
@@ -56,8 +58,8 @@ const DurationForm = () => {
           </ErrorMessage>
         </Form>
       </Formik>
-      <p className="faq-btn">
-        <a href="#0" onClick={handleClick}>
+      <p>
+        <a className="small-text" href="#0" onClick={handleClick}>
           FAQ: How much time should I book?
         </a>
       </p>

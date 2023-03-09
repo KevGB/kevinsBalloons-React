@@ -28,7 +28,7 @@ const GuestsForm = () => {
     <div className="form">
       <h1>Tell us about you event</h1>
       <Formik onSubmit={handleSubmit}>
-        <Form>
+        <Form className="KB-form">
           <FormGroup>
             <Label>Approximately how many guests/kids do you expect?</Label>
             <br />
@@ -39,19 +39,20 @@ const GuestsForm = () => {
                 max="100"
                 value={numGuests}
                 name="numGuests"
+                className="field"
                 onChange={handleChange}
+                style={{width:"300px"}}
               />
 
-              {numGuests && <p>{numGuests}</p>}
+              {numGuests && <p className="range-display">{numGuests}</p>}
             </div>
-          </FormGroup>
-          <FormGroup>
+         
             <Label>What's the age range of the guests/kids?</Label>
             <Field
               name="ageRange"
               value={ageRange}
               onChange={handleChange}
-              className="form-control"
+              className="form-control field"
               placeholder="ex. 4-8"
             />
           </FormGroup>

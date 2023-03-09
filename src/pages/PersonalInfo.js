@@ -3,7 +3,7 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 // import { validateForm } from "./validateForm";
 import "../App.css";
 import { Link } from "react-router-dom";
-import { Label } from "reactstrap";
+import { Label, FormGroup } from "reactstrap";
 import { TandC } from "../components/TandC";
 
 const initialValues = {
@@ -12,12 +12,24 @@ const initialValues = {
   email: "",
   phone: "",
   instagram: "",
+  referal: "",
+  notes: "",
+  tandc: false,
 };
 
 const PersonalInfo = () => {
   const [formValues, updateFormValues] = useState(initialValues);
   const [tandcShow, toggleTandcShow] = useState(false);
-  const { firstName, lastName, email, phone, instagram } = formValues;
+  const {
+    firstName,
+    lastName,
+    email,
+    phone,
+    instagram,
+    referal,
+    notes,
+    tandc,
+  } = formValues;
 
   const handleSubmit = (e) => {
     // e.preventDefault();
@@ -35,8 +47,6 @@ const PersonalInfo = () => {
     toggleTandcShow(!tandcShow);
   };
 
- 
-
   return (
     <div className="form">
       <h1>Tell us about yourself</h1>
@@ -48,7 +58,6 @@ const PersonalInfo = () => {
         onSubmit={handleSubmit}
       >
         <Form className="KB-form">
-          
           <Field
             type="text"
             name="firstName"
@@ -56,7 +65,6 @@ const PersonalInfo = () => {
             placeholder="First Name"
             onChange={handleChange}
             className="form-control field"
-            
           />
           <ErrorMessage name="firstName">
             {(msg) => <p className="text-danger">{msg}</p>}
@@ -94,31 +102,53 @@ const PersonalInfo = () => {
           <ErrorMessage name="phone">
             {(msg) => <p className="text-danger">{msg}</p>}
           </ErrorMessage>
-          <p className="small-text">
+          <Label className="small-text">
             If you prefer Instagram messaging, add your handle here (optional)
-          </p>
+            <Field
+              type="text"
+              name="instagram"
+              value={instagram}
+              placeholder="Instagram"
+              onChange={handleChange}
+              className="form-control field"
+            />
+          </Label>
+          <br />
           <Field
-            type="text"
-            name="instagram"
-            value={instagram}
-            placeholder="Instagram"
+            as="textarea"
+            value={referal}
+            name="referal"
             onChange={handleChange}
             className="form-control field"
+            placeholder="How'd you hear about us?"
           />
-
+          <br />
+          <Field
+            as="textarea"
+            value={notes}
+            name="notes"
+            onChange={handleChange}
+            className="form-control field"
+            placeholder="Any additional note about your event"
+          />
+          <br />
           <Label>
             <Field
               name="tandc"
               type="checkbox"
-              className="form-check-input"
-              
+              // value={tandc}
+              // onChange={handleChange}
+              className="form-check-input field"
             />{" "}
-            Do you agree to our <a href="#0" onClick={handleClick}>T&C</a>?
-          
+            Do you agree to our{" "}
+            <a href="#0" onClick={handleClick}>
+              T&C
+            </a>
+            ?
             <ErrorMessage name="tandc">
               {(msg) => <p className="text-danger">{msg}</p>}
             </ErrorMessage>
-            {tandcShow && <TandC/>}
+            {tandcShow && <TandC />}
           </Label>
           <Link className="nav-link" to="/thankyou">
             <button className="btn btn-primary" type="submit">
