@@ -128,3 +128,8 @@ box-shadow: 0 0 5px 1px #ffcf00, 0 0 5px 3px #ffcf00 inset ;
   
   background-color: rgb(226, 225, 225);
 }
+
+.faq-btn{
+  margin: 20px;
+  font-size: 12px;
+}

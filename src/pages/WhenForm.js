@@ -1,9 +1,20 @@
+import { Formik, Field, Form, FormGroup } from "formik";
+import { Label } from "reactstrap";
 import { Link } from "react-router-dom";
 
 const WhenForm = () => {
   return (
-    <>
-      <div>When is your event?</div>
+    <div className="form">
+      <h1>Tell us about your event</h1>
+    <Formik>
+      <Form>
+        <FormGroup>
+          <Label>When is your event?</Label>
+          <Field></Field>
+        </FormGroup>
+      </Form>
+    </Formik>
+      
       <Link className="nav-link" to="/where">
         <button className="btn btn-primary" type="submit">
           Next{" "}
@@ -29,7 +40,7 @@ const WhenForm = () => {
           <i className="fa fa-circle not-yet" />
         </Link>
       </div>
-    </>
+    </div>
   );
 };
 
