@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
+
 const StartForm = () => {
   return (
-    <>
-    <div>Let's Start</div>
+    <div className="form">
+    <h1>All right!</h1>
+    <h3>Let's book your event!</h3>
+    <p>Just answer a few short questions</p>
     <Link className="nav-link" to="/duration">
             <button className="btn btn-primary" type="submit">
               Let's get this party started!
@@ -28,7 +31,7 @@ const StartForm = () => {
         <i className="fa fa-circle not-yet" />
       </Link>
     </div>
-    </>
+    </div>
   );
 };
 

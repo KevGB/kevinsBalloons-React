@@ -3,7 +3,7 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 // import { validateForm } from "./validateForm";
 import "../App.css";
 import { Link } from "react-router-dom";
-import { Label, FormGroup } from "reactstrap";
+import { Label } from "reactstrap";
 import { TandC } from "../components/TandC";
 
 const initialValues = {
@@ -35,6 +35,8 @@ const PersonalInfo = () => {
   const handleClick = () => {
     toggleTandcShow(!tandcShow);
   };
+
+ 
 
   return (
     <div className="form">
@@ -109,8 +111,8 @@ const PersonalInfo = () => {
             <Field
               name="tandc"
               type="checkbox"
-              // value={tandc}
               className="form-check-input"
+              
             />{" "}
             Do you agree to our <a href="#0" onClick={handleClick}>T&C</a>?
           

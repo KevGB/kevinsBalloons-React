@@ -1,8 +1,10 @@
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import { Formik, Form, Field, ErrorMessage } from "formik";
+import "../App.css";import { Link } from "react-router-dom";
 
 const DurationForm = () => {
   return (
-    <>
+    <div className="form">
       <div>How long do you need Kevin?</div>
       <Link className="nav-link" to="/when">
         <button className="btn btn-primary" type="submit">
@@ -29,7 +31,7 @@ const DurationForm = () => {
           <i className="fa fa-circle not-yet" />
         </Link>
       </div>
-    </>
+    </div>
   );
 };
 
