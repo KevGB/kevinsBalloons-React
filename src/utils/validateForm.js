@@ -33,5 +33,27 @@ export const validateForm = (values) => {
     errors.tandc = "Required";
   }
 
+  if (!values.duration) {
+    errors.duration = "Required";
+  } 
+
+  if (!values.time) {
+    errors.time = "Event time is required"
+  }
+
+  if (!values.date) {
+    errors.date = "Event date is required"
+  }
+
+  if (!values.address) {
+    errors.address = "Address is required"
+  }
+  
+  if(!values.city) {
+    errors.city = "Gotta know the city"
+  }
+
+  
+
   return errors;
 };

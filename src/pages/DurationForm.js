@@ -2,41 +2,36 @@ import { useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import "../App.css";
 import { Link } from "react-router-dom";
-import { FAQDuration } from "../components/FAQDuration";
+import { FAQDuration } from "../utils/FAQDuration";
+import { validateForm } from "../utils/validateForm";
+import { Button } from "reactstrap";
 
-const initialValues = {
-  duration: "",
-};
 const DurationForm = () => {
   const [faqShow, toggleFaqShow] = useState(false);
-  const [formValue, setFormValue] = useState(initialValues);
-  const { duration } = formValue;
 
   const handleClick = () => {
     toggleFaqShow(!faqShow);
   };
 
-  const handleChange = (e) => {
-    console.log(e.target.value);
-    setFormValue({
-      ...formValue,
-      [e.target.name]: e.target.value,
-    });
+  const handleSubmit = (values) => {
+    console.log(JSON.stringify(values));
   };
 
   return (
     <div className="form">
       <h1>Tell us about your event</h1>
       <div>How long would you like Kevin to perform at your event?</div>
-      <Formik>
+      <Formik
+        initialValues={{ duration: "" }}
+        validate={validateForm}
+        onSubmit={handleSubmit}
+      >
         <Form className="KB-form">
           <Field
             as="select"
             name="duration"
             className="form-control field"
-            value={duration}
-            onChange={handleChange}
-            style={{ width: "400px" }}
+            style={{ width: "300px" }}
           >
             <option value="">Select the number of hours</option>
             <option value="1">1 hour</option>
@@ -53,17 +48,22 @@ const DurationForm = () => {
             <option value="7">7 hours</option>
             <option value="8">8+ hours</option>
           </Field>
+          <br />
+
           <ErrorMessage name="duration">
             {(msg) => <p className="text-danger ">{msg}</p>}
           </ErrorMessage>
+          <p style={{ display: "flexEnd" }}>
+            <a className="small-text" href="#0" onClick={handleClick}>
+              FAQ: How much time should I book?
+            </a>
+          </p>
+          {faqShow && <FAQDuration />}
+          <Button type="submit" color="info">
+            Next
+          </Button>
         </Form>
       </Formik>
-      <p>
-        <a className="small-text" href="#0" onClick={handleClick}>
-          FAQ: How much time should I book?
-        </a>
-      </p>
-      {faqShow && <FAQDuration />}
       <Link className="nav-link" to="/when">
         <button className="btn btn-primary" type="submit">
           Next{" "}
@@ -71,6 +71,9 @@ const DurationForm = () => {
       </Link>
       <div className="form-navigation">
         <Link to="/">
+          <i className="fa fa-solid fa-circle" />
+        </Link>
+        <Link to="/info">
           <i className="fa fa-solid fa-circle " />
         </Link>
         <Link to="/duration">
@@ -85,8 +88,8 @@ const DurationForm = () => {
         <Link to="/guests">
           <i className="fa fa-solid fa-circle not-yet" />
         </Link>
-        <Link to="/info">
-          <i className="fa fa-circle not-yet" />
+        <Link to="/additional">
+          <i className="fa fa-solid fa-circle not-yet" />
         </Link>
       </div>
     </div>

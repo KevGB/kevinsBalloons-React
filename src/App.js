@@ -8,7 +8,8 @@ import WhereForm from "./pages/WhereForm";
 import GuestsForm from "./pages/GuestForm";
 import PersonalInfo from "./pages/PersonalInfo";
 import ThankYouPage from "./pages/ThankYouPage";
-import Navigation from "./components/Navigation";
+import AdditionalInfo from "./pages/AdditionalInfo";
+// import Navigation from "./components/Navigation";
 import Footer from "./components/Footer"
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
         <Route path="where" element={<WhereForm />} />
         <Route path="guests" element={<GuestsForm />} />
         <Route path="info" element={<PersonalInfo />} />
+        <Route path="additional" element={<AdditionalInfo />} />
         <Route path="thankyou" element={<ThankYouPage />} />
       </Routes>
       <Footer/>

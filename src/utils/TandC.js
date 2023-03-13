@@ -7,6 +7,11 @@ export const TandC = () => {
         By hiring Kevin Bice you agree to the following terms and conditions:
       </p>
       <ol>
+        <li>
+          I agree to be contected by Kevin's Balloons about my inquiry, and be
+          put on the email list - Don't worry, we only rarely send out emails
+          for discounts, so we won't spam up your inbox
+        </li>
         <li>All sales are final. There are no refunds.</li>
         <li>There are no cancellations or rescheduling.</li>
         <li>There are no refunds for popped balloons.</li>

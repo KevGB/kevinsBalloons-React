@@ -1,48 +1,32 @@
 import { Link } from "react-router-dom";
-import { Formik, Form, Field } from "formik";
-import { FormGroup, Label } from "reactstrap";
-import { useState } from "react";
-
-const initialValues = {
-  address: "",
-  addressTwo: "",
-  city: "",
-  state: "",
-  country: "",
-  locationType: "",
-  specification: "",
-  parking: "",
-};
+import { Formik, Form, Field, ErrorMessage } from "formik";
+import { FormGroup, Label, Button } from "reactstrap";
+import { validateForm } from "../utils/validateForm";
 
 const WhereForm = () => {
-  const [formValues, updateFormValues] = useState(initialValues);
-  const {
-    address,
-    addressTwo,
-    city,
-    state,
-    country,
-    locationType,
-    specification,
-    parking,
-  } = formValues;
-
-  const handleSubmit = () => {
-    console.log(formValues);
+  const initialValues = {
+    address: "",
+    addressTwo: "",
+    city: "",
+    state: "",
+    country: "",
+    locationType: "",
+    specification: "",
+    parking: "",
   };
 
-  const handleChange = (e) => {
-    console.log(e.target.value);
-    updateFormValues({
-      ...formValues,
-      [e.target.name]: e.target.value,
-    });
+  const handleSubmit = (values) => {
+    console.log(values);
   };
 
   return (
     <div className="form">
       <h1>Tell us about your event</h1>
-      <Formik onSubmit={handleSubmit}>
+      <Formik
+        initialValues={initialValues}
+        onSubmit={handleSubmit}
+        validate={validateForm}
+      >
         <Form className="KB-form">
           <FormGroup>
             <Label>Where is your event?</Label>
@@ -50,52 +34,57 @@ const WhereForm = () => {
               name="address"
               type="text"
               placeholder="Address"
-              value={address}
               className="form-control field"
-              onChange={handleChange}
             />
             <Field
               name="addressTwo"
               type="text"
               placeholder=""
-              value={addressTwo}
               className="form-control field"
-              onChange={handleChange}
             />
-            <div style={{ display: "flex" }}>
+            <ErrorMessage name="address">
+              {(msg) => <p className="text-danger ">{msg}</p>}
+            </ErrorMessage>
+            <br />
+            <div style={{ display: "flex", maxWidth: "300px" }}>
               <Field
                 name="city"
                 type="text"
-                placeholder="city"
-                value={city}
-                className="form-control field"
-                onChange={handleChange}
+                placeholder="City"
+                className="form-control"
               />
+
               <Field
                 name="state"
                 type="text"
                 placeholder="State"
-                value={state}
-                className="form-control field"
-                onChange={handleChange}
+                className="form-control "
               />
               <Field
                 name="country"
                 type="text"
                 placeholder="Country"
-                value={country}
-                className="form-control field"
-                onChange={handleChange}
+                className="form-control "
               />
             </div>
-          
+            <div style={{ display: "flex", maxWidth: "300px" }}>
+              <ErrorMessage name="city">
+                {(msg) => <p className="text-danger ">{msg}</p>}
+              </ErrorMessage>
+              <ErrorMessage name="state">
+                {(msg) => <p className="text-danger ">{msg}</p>}
+              </ErrorMessage>
+              <ErrorMessage name="country">
+                {(msg) => <p className="text-danger ">{msg}</p>}
+              </ErrorMessage>
+            </div>
+            <br />
+
             <Label>What type of location is this?</Label>
             <Field
               as="select"
               name="locationType"
-              value={locationType}
               className="form-control field"
-              onChange={handleChange}
             >
               <option value=""></option>
               <option value="house">House</option>
@@ -112,21 +101,21 @@ const WhereForm = () => {
             <Field
               type="text"
               name="specification"
-              value={specification}
               className="form-control field"
               placeholder="ex: Yacht, Water Park, Chocolate Factory"
-              onChange={handleChange}
             />
-         
+            <br />
+
             <Label>What parking is available?</Label>
             <Field
-            as="textarea"
-            name="parking"
-            value={parking}
-            className="form-control field"
-            onChange={handleChange}
+              as="textarea"
+              name="parking"
+              className="form-control field"
             />
           </FormGroup>
+          <Button type="submit" color="info">
+            Next
+          </Button>
         </Form>
       </Formik>
       <Link className="nav-link" to="/guests">
@@ -136,10 +125,13 @@ const WhereForm = () => {
       </Link>
       <div className="form-navigation">
         <Link to="/">
+          <i className="fa fa-solid fa-circle" />
+        </Link>
+        <Link to="/info">
           <i className="fa fa-solid fa-circle " />
         </Link>
         <Link to="/duration">
-          <i className="fa fa-solid fa-circle " />
+          <i className="fa fa-solid fa-circle" />
         </Link>
         <Link to="/when">
           <i className="fa fa-solid fa-circle " />
@@ -150,8 +142,8 @@ const WhereForm = () => {
         <Link to="/guests">
           <i className="fa fa-solid fa-circle not-yet" />
         </Link>
-        <Link to="/info">
-          <i className="fa fa-circle not-yet" />
+        <Link to="/additional">
+          <i className="fa fa-solid fa-circle not-yet" />
         </Link>
       </div>
     </div>

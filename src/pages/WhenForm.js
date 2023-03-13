@@ -1,67 +1,57 @@
 import { Formik, Field, Form, ErrorMessage } from "formik";
-import { Label, FormGroup } from "reactstrap";
+import { Label, FormGroup, Button } from "reactstrap";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import { FAQAvailability } from "../components/FAQAvailability";
-
-const initialValues = {
-  date: "",
-  time: "",
-};
+import { FAQAvailability } from "../utils/FAQAvailability";
+import { validateForm } from "../utils/validateForm";
 
 const WhenForm = () => {
+  const initialValues = {
+    date: "",
+    time: "",
+  };
+
   const [faqShow, toggleFaqShow] = useState(false);
-  const [formValues, updateFormValues] = useState(initialValues);
-  const { date, time } = formValues;
 
   const handleClick = () => {
     toggleFaqShow(!faqShow);
   };
 
-  const handleChange = (e) => {
-    console.log(e.target.value);
-    updateFormValues({
-      ...formValues,
-      [e.target.name]: e.target.value,
-    });
+  const handleSubmit = (values) => {
+    console.log(JSON.stringify(values));
   };
 
   return (
     <div className="form">
       <h1>Tell us about your event</h1>
-      <Formik>
+      <Formik
+        initialValues={initialValues}
+        onSubmit={handleSubmit}
+        validate={validateForm}
+      >
         <Form className="KB-form">
-          <FormGroup style={{ width: "400px" }}>
+          <FormGroup>
             <Label>When is your event?</Label>
-            <Field
-              name="date"
-              type="date"
-              value={date}
-              className="form-control field"
-              onChange={handleChange}
-            />
+            <Field name="date" type="date" className="form-control field" />
             <ErrorMessage name="date">
               {(msg) => <p className="text-danger ">{msg}</p>}
             </ErrorMessage>
-            <Field
-              name="time"
-              type="time"
-              value={time}
-              className="form-control field"
-              onChange={handleChange}
-            />
+            <Field name="time" type="time" className="form-control field" />
             <ErrorMessage name="time">
               {(msg) => <p className="text-danger ">{msg}</p>}
             </ErrorMessage>
           </FormGroup>
+          <p>
+            <a className="small-text" href="#0" onClick={handleClick}>
+              FAQ: What is Kevin's Availability?
+            </a>
+          </p>
+          {faqShow && <FAQAvailability />}
+          <Button type="submit" color="info">
+            Next
+          </Button>
         </Form>
       </Formik>
-      <p>
-        <a className="small-text" href="#0" onClick={handleClick}>
-          FAQ: What is Kevin's Availability?
-        </a>
-      </p>
-      {faqShow && <FAQAvailability />}
       <Link className="nav-link" to="/where">
         <button className="btn btn-primary" type="submit">
           Next{" "}
@@ -70,10 +60,13 @@ const WhenForm = () => {
 
       <div className="form-navigation">
         <Link to="/">
+          <i className="fa fa-solid fa-circle" />
+        </Link>
+        <Link to="/info">
           <i className="fa fa-solid fa-circle " />
         </Link>
         <Link to="/duration">
-          <i className="fa fa-solid fa-circle " />
+          <i className="fa fa-solid fa-circle" />
         </Link>
         <Link to="/when">
           <i className="fa fa-solid fa-circle form-navigation-active" />
@@ -84,8 +77,8 @@ const WhenForm = () => {
         <Link to="/guests">
           <i className="fa fa-solid fa-circle not-yet" />
         </Link>
-        <Link to="/info">
-          <i className="fa fa-circle not-yet" />
+        <Link to="/additional">
+          <i className="fa fa-solid fa-circle not-yet" />
         </Link>
       </div>
     </div>

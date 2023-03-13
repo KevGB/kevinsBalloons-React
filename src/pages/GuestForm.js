@@ -41,12 +41,12 @@ const GuestsForm = () => {
                 name="numGuests"
                 className="field"
                 onChange={handleChange}
-                style={{width:"300px"}}
+                style={{ width: "300px" }}
               />
 
               {numGuests && <p className="range-display">{numGuests}</p>}
             </div>
-         
+
             <Label>What's the age range of the guests/kids?</Label>
             <Field
               name="ageRange"
@@ -59,17 +59,20 @@ const GuestsForm = () => {
         </Form>
       </Formik>
 
-      <Link className="nav-link" to="/info">
+      <Link className="nav-link" to="/additional">
         <button className="btn btn-primary" type="submit">
           Next{" "}
         </button>
       </Link>
       <div className="form-navigation">
         <Link to="/">
+          <i className="fa fa-solid fa-circle" />
+        </Link>
+        <Link to="/info">
           <i className="fa fa-solid fa-circle " />
         </Link>
         <Link to="/duration">
-          <i className="fa fa-solid fa-circle " />
+          <i className="fa fa-solid fa-circle" />
         </Link>
         <Link to="/when">
           <i className="fa fa-solid fa-circle " />
@@ -80,8 +83,8 @@ const GuestsForm = () => {
         <Link to="/guests">
           <i className="fa fa-solid fa-circle form-navigation-active" />
         </Link>
-        <Link to="/info">
-          <i className="fa fa-circle not-yet" />
+        <Link to="/additional">
+          <i className="fa fa-solid fa-circle not-yet" />
         </Link>
       </div>
     </div>
