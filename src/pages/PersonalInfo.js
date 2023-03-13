@@ -4,7 +4,7 @@ import { validateForm } from "./validateForm";
 import "../App.css";
 import { Link } from "react-router-dom";
 import { Label } from "reactstrap";
-// import { Button } from "reactstrap";
+import { Button } from "reactstrap";
 import { TandC } from "../components/TandC";
 
 const PersonalInfo = () => {
@@ -17,23 +17,22 @@ const PersonalInfo = () => {
     referal: "",
     notes: "",
   };
-  const [formValues, updateFormValues] = useState(initialValues);
+  // const [formValues, updateFormValues] = useState(initialValues);
   const [tandcShow, toggleTandcShow] = useState(false);
-  const { firstName, lastName, email, phone, instagram, referal, notes } =
-    formValues;
+  // const { firstName, lastName, email, phone, instagram, referal, notes } = formValues;
 
-  // const handleSubmit = (e, formValues) => {
-  //   e.preventDefault();
+  const handleSubmit = () => {
+    // e.preventDefault();
+    console.log({formValues});
+  };
+  // const handleChange = (e) => {
+  //   console.log(e.target.value);
+  //   updateFormValues({
+  //     ...formValues,
+  //     [e.target.name]: e.target.value,
+  //   });
   //   console.log(formValues);
   // };
-  const handleChange = (e) => {
-    console.log(e.target.value);
-    updateFormValues({
-      ...formValues,
-      [e.target.name]: e.target.value,
-    });
-    console.log(formValues);
-  };
 
   const handleClick = () => {
     toggleTandcShow(!tandcShow);
@@ -47,15 +46,14 @@ const PersonalInfo = () => {
       <Formik
         initialValues={initialValues}
         validate={validateForm}
-        // onSubmit={handleSubmit}
+        onSubmit={handleSubmit}
       >
         <Form className="KB-form">
           <Field
             type="text"
             name="firstName"
-            value={firstName}
+            // value={firstName}
             placeholder="First Name"
-            onChange={handleChange}
             className="form-control field"
           />
           <ErrorMessage name="firstName">
@@ -64,9 +62,8 @@ const PersonalInfo = () => {
           <Field
             type="text"
             name="lastName"
-            value={lastName}
+            // value={lastName}
             placeholder="Last Name"
-            onChange={handleChange}
             className="form-control field"
           />
           <ErrorMessage name="lastName">
@@ -75,9 +72,8 @@ const PersonalInfo = () => {
           <Field
             type="email"
             name="email"
-            value={email}
+            // value={email}
             placeholder="Email"
-            onChange={handleChange}
             className="form-control field"
           />
           <ErrorMessage name="email">
@@ -86,9 +82,8 @@ const PersonalInfo = () => {
           <Field
             type="tel"
             name="phone"
-            value={phone}
+            // value={phone}
             placeholder="Phone Number"
-            onChange={handleChange}
             className="form-control field"
           />
           <ErrorMessage name="phone">
@@ -99,27 +94,24 @@ const PersonalInfo = () => {
             <Field
               type="text"
               name="instagram"
-              value={instagram}
+              // value={instagram}
               placeholder="Instagram"
-              onChange={handleChange}
               className="form-control field"
             />
           </Label>
           <br />
           <Field
             as="textarea"
-            value={referal}
+            // value={referal}
             name="referal"
-            onChange={handleChange}
             className="form-control field"
             placeholder="How'd you hear about us?"
           />
           <br />
           <Field
             as="textarea"
-            value={notes}
+            // value={notes}
             name="notes"
-            onChange={handleChange}
             className="form-control field"
             placeholder="Any additional note about your event"
           />
@@ -140,7 +132,7 @@ const PersonalInfo = () => {
             </ErrorMessage>
             {tandcShow && <TandC />}
           </Label>
-          {/* <Button type="submit">Submit</Button> */}
+          <Button type="submit">Submit</Button>
         </Form>
       </Formik>
       <Link className="nav-link" to="/thankyou">

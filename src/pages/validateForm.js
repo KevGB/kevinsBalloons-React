@@ -18,7 +18,7 @@ export const validateForm = (values) => {
   if (!values.email) {
     errors.email = "Email is required";
   } else if (!validEmail.test(values.email)) {
-    errors.email = "Check that this is a valid email address";
+    errors.email = "Double check that this is a valid email address";
   }
 
   const validPhone = /^(?:(\+\d+)[ -])?\(?\d{3}\)?[ -]?(\d{3})[ -]?(\d{4})$/g;
@@ -26,7 +26,7 @@ export const validateForm = (values) => {
     errors.phone = "Phone number is required";
   } else if (!validPhone.test(values.phone)) {
     errors.phone =
-      "Only use numbers and spaces (and a + if you're including a country code)";
+      "Try only using numbers and spaces";
   }
 
   if (!values.tandc) {
