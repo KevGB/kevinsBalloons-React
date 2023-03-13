@@ -1,69 +1,65 @@
 import { Formik, Field, Form } from "formik";
-import { Label, FormGroup } from "reactstrap";
-import { Link } from "react-router-dom";
-import { useState } from "react";
-
-const initialValues = {
-  numGuests: 0,
-  ageRange: "",
-};
+import { Label, FormGroup, Button } from "reactstrap";
+import { Link, useNavigate } from "react-router-dom";
+// import { useState } from "react";
 
 const GuestsForm = () => {
-  const [formValues, updateFormValues] = useState(initialValues);
-  const { numGuests, ageRange } = formValues;
+  // const [numGuests, setNumGuests] = useState(0);
 
-  const handleSubmit = () => {
-    console.log(formValues);
+  const navigate = useNavigate();
+
+  const initialValues = {
+    numGuests: "",
+    ageRange: "",
   };
 
-  const handleChange = (e) => {
-    console.log(e.target.value);
-    updateFormValues({
-      ...formValues,
-      [e.target.name]: e.target.value,
-    });
+  const handleSubmit = (values) => {
+    console.log(values);
+    navigate("/additional");
   };
+
+ 
 
   return (
     <div className="form">
       <h1>Tell us about you event</h1>
-      <Formik onSubmit={handleSubmit}>
-        <Form className="KB-form">
-          <FormGroup>
-            <Label>Approximately how many guests/kids do you expect?</Label>
-            <br />
-            <div style={{ display: "flex", justifyContent: "center" }}>
-              <input
-                type="range"
-                min="0"
-                max="100"
-                value={numGuests}
-                name="numGuests"
-                className="field"
-                onChange={handleChange}
-                style={{ width: "300px" }}
+      <Formik initialValues={initialValues} onSubmit={handleSubmit}>
+        {(formikProps) => (
+          <Form className="KB-form">
+            <FormGroup>
+              <Label>Approximately how many guests/kids do you expect?</Label>
+              <br />
+              <div style={{ display: "flex", justifyContent: "center" }}>
+                <input
+                  type="range"
+                  min="0"
+                  max="100"
+                  id="numGuests"
+                  value={formikProps.values.numGuests}
+                  name="numGuests"
+                  className="field"
+                  onChange={(e) => {
+                    formikProps.setFieldValue("numGuests", parseInt(e.target.value));
+                  }}
+                  style={{ width: "300px" }}
+                /> {' '}
+                <span className="range-display">{formikProps.values.numGuests}</span>
+              </div>
+
+              <Label>What's the age range of the guests/kids?</Label>
+              <Field
+                name="ageRange"
+                className="form-control field"
+                placeholder="ex. 4-8"
               />
-
-              {numGuests && <p className="range-display">{numGuests}</p>}
-            </div>
-
-            <Label>What's the age range of the guests/kids?</Label>
-            <Field
-              name="ageRange"
-              value={ageRange}
-              onChange={handleChange}
-              className="form-control field"
-              placeholder="ex. 4-8"
-            />
-          </FormGroup>
-        </Form>
+            </FormGroup>
+            <Button type="submit" color="info">
+              Next
+            </Button>
+          </Form>
+        )}
       </Formik>
 
-      <Link className="nav-link" to="/additional">
-        <button className="btn btn-primary" type="submit">
-          Next{" "}
-        </button>
-      </Link>
       <div className="form-navigation">
         <Link to="/">
           <i className="fa fa-solid fa-circle" />
@@ -92,3 +88,23 @@ const GuestsForm = () => {
 };
 
 export default GuestsForm;
+
+// import { Formik, Field, Form } from "formik";
+// import { Label, FormGroup, Button } from "reactstrap";
+// import { Link, useNavigate } from "react-router-dom";
+
+// const GuestsForm = () => {
+
+//   const { numGuests } = value;
+
+//   const navigate = useNavigate();
+
+//   const initialValues = {
+//     numGuests: 0,
+//     ageRange: "",
+//   };
+
+//   const handleSubmit = (values) => {
+//     console.log(values);
+//     navigate("/additonal");
+//   };

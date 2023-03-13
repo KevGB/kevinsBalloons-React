@@ -29,29 +29,29 @@ export const validateForm = (values) => {
       "Try only using numbers and spaces";
   }
 
-  if (!values.tandc) {
-    errors.tandc = "Required";
-  }
+  // if (!values.tandc) {
+  //   errors.tandc = "Required";
+  // }
 
-  if (!values.duration) {
-    errors.duration = "Required";
-  } 
+  // if (!values.duration) {
+  //   errors.duration = "Required";
+  // } 
 
-  if (!values.time) {
-    errors.time = "Event time is required"
-  }
+  // if (!values.time) {
+  //   errors.time = "Event time is required"
+  // }
 
-  if (!values.date) {
-    errors.date = "Event date is required"
-  }
+  // if (!values.date) {
+  //   errors.date = "Event date is required"
+  // }
 
-  if (!values.address) {
-    errors.address = "Address is required"
-  }
+  // if (!values.address) {
+  //   errors.address = "Address is required"
+  // }
   
-  if(!values.city) {
-    errors.city = "Gotta know the city"
-  }
+  // if(!values.city) {
+  //   errors.city = "Gotta know the city"
+  // }
 
   
 

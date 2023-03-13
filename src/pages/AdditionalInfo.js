@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import { validateForm } from "../utils/validateForm";
+import { validateAdditionalForm } from "../utils/validateAdditionalForm";
 import "../App.css";
-import { Link } from "react-router-dom";
-import { Label, FormGroup, Col } from "reactstrap";
+import { Link, useNavigate } from "react-router-dom";
+import { Label, FormGroup } from "reactstrap";
 import { Button } from "reactstrap";
 import { TandC } from "../utils/TandC";
 
@@ -14,10 +14,12 @@ const AdditionalInfo = () => {
     tandc: false,
   };
 
+  const navigate = useNavigate();
   const [tandcShow, toggleTandcShow] = useState(false);
 
   const handleSubmit = (values) => {
     console.log(JSON.stringify(values));
+    navigate("/thankyou");
   };
 
   const handleClick = () => {
@@ -30,7 +32,7 @@ const AdditionalInfo = () => {
       <br />
       <Formik
         initialValues={initialValues}
-        validate={validateForm}
+        validate={validateAdditionalForm}
         onSubmit={handleSubmit}
       >
         <Form className="KB-form">
@@ -75,11 +77,7 @@ const AdditionalInfo = () => {
           </Button>
         </Form>
       </Formik>
-      <Link className="nav-link" to="/thankyou">
-        <button className="btn btn-primary" type="submit">
-          Finish
-        </button>
-      </Link>
+
       <div className="form-navigation">
         <Link to="/">
           <i className="fa fa-solid fa-circle" />

@@ -1,9 +1,8 @@
-import { useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { validateForm } from "../utils/validateForm";
 import "../App.css";
-import { Link } from "react-router-dom";
-import { Label, FormGroup, Col } from "reactstrap";
+import { Link, useNavigate } from "react-router-dom";
+import { Label, FormGroup } from "reactstrap";
 import { Button } from "reactstrap";
 
 const PersonalInfo = () => {
@@ -13,15 +12,14 @@ const PersonalInfo = () => {
     email: "",
     phone: "",
     instagram: "",
-
   };
 
+  const navigate = useNavigate();
 
   const handleSubmit = (values) => {
     console.log(JSON.stringify(values));
+    navigate("/duration");
   };
-
-
 
   return (
     <div className="form">
@@ -94,17 +92,12 @@ const PersonalInfo = () => {
             </Label>
           </FormGroup>
 
-
           <Button type="submit" color="info">
-            Submit
+            Next
           </Button>
         </Form>
       </Formik>
-      <Link className="nav-link" to="/duration">
-        <button className="btn btn-primary" type="submit">
-          next
-        </button>
-      </Link>
+      
       <div className="form-navigation">
         <Link to="/">
           <i className="fa fa-solid fa-circle" />

@@ -1,15 +1,17 @@
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import { Label, FormGroup, Button } from "reactstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { FAQAvailability } from "../utils/FAQAvailability";
-import { validateForm } from "../utils/validateForm";
+import { validateWhenForm } from "../utils/validateWhenForm";
 
 const WhenForm = () => {
   const initialValues = {
     date: "",
     time: "",
   };
+
+  const navigate = useNavigate();
 
   const [faqShow, toggleFaqShow] = useState(false);
 
@@ -19,6 +21,7 @@ const WhenForm = () => {
 
   const handleSubmit = (values) => {
     console.log(JSON.stringify(values));
+    navigate("/where")
   };
 
   return (
@@ -27,7 +30,7 @@ const WhenForm = () => {
       <Formik
         initialValues={initialValues}
         onSubmit={handleSubmit}
-        validate={validateForm}
+        validate={validateWhenForm}
       >
         <Form className="KB-form">
           <FormGroup>
@@ -52,11 +55,7 @@ const WhenForm = () => {
           </Button>
         </Form>
       </Formik>
-      <Link className="nav-link" to="/where">
-        <button className="btn btn-primary" type="submit">
-          Next{" "}
-        </button>
-      </Link>
+    
 
       <div className="form-navigation">
         <Link to="/">

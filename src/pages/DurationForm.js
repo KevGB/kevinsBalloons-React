@@ -1,13 +1,15 @@
 import { useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import "../App.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FAQDuration } from "../utils/FAQDuration";
-import { validateForm } from "../utils/validateForm";
+import { validateDurationForm } from "../utils/validateDurationForm";
 import { Button } from "reactstrap";
 
 const DurationForm = () => {
   const [faqShow, toggleFaqShow] = useState(false);
+
+  const navigate = useNavigate()
 
   const handleClick = () => {
     toggleFaqShow(!faqShow);
@@ -15,6 +17,7 @@ const DurationForm = () => {
 
   const handleSubmit = (values) => {
     console.log(JSON.stringify(values));
+    navigate("/when")
   };
 
   return (
@@ -23,7 +26,7 @@ const DurationForm = () => {
       <div>How long would you like Kevin to perform at your event?</div>
       <Formik
         initialValues={{ duration: "" }}
-        validate={validateForm}
+        validate={validateDurationForm}
         onSubmit={handleSubmit}
       >
         <Form className="KB-form">
@@ -64,11 +67,7 @@ const DurationForm = () => {
           </Button>
         </Form>
       </Formik>
-      <Link className="nav-link" to="/when">
-        <button className="btn btn-primary" type="submit">
-          Next{" "}
-        </button>
-      </Link>
+     
       <div className="form-navigation">
         <Link to="/">
           <i className="fa fa-solid fa-circle" />

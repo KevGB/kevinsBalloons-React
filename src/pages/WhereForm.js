@@ -1,7 +1,7 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { FormGroup, Label, Button } from "reactstrap";
-import { validateForm } from "../utils/validateForm";
+import { validateWhereForm } from "../utils/validateWhereForm";
 
 const WhereForm = () => {
   const initialValues = {
@@ -15,8 +15,12 @@ const WhereForm = () => {
     parking: "",
   };
 
+  const navigate = useNavigate();
+
   const handleSubmit = (values) => {
-    console.log(values);
+    console.log(JSON.stringify(values));
+    navigate("/guests")
+
   };
 
   return (
@@ -25,7 +29,7 @@ const WhereForm = () => {
       <Formik
         initialValues={initialValues}
         onSubmit={handleSubmit}
-        validate={validateForm}
+        validate={validateWhereForm}
       >
         <Form className="KB-form">
           <FormGroup>
@@ -118,11 +122,7 @@ const WhereForm = () => {
           </Button>
         </Form>
       </Formik>
-      <Link className="nav-link" to="/guests">
-        <button className="btn btn-primary" type="submit">
-          Next{" "}
-        </button>
-      </Link>
+      
       <div className="form-navigation">
         <Link to="/">
           <i className="fa fa-solid fa-circle" />
