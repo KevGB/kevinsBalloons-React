@@ -51,6 +51,7 @@ const PersonalInfo = () => {
               placeholder="Last Name"
               className="form-control field"
             />
+            
             <ErrorMessage name="lastName">
               {(msg) => <p className="text-danger">{msg}</p>}
             </ErrorMessage>

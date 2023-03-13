@@ -21,7 +21,7 @@ const WhenForm = () => {
 
   const handleSubmit = (values) => {
     console.log(JSON.stringify(values));
-    navigate("/where")
+    navigate("/where");
   };
 
   return (
@@ -39,6 +39,9 @@ const WhenForm = () => {
             <ErrorMessage name="date">
               {(msg) => <p className="text-danger ">{msg}</p>}
             </ErrorMessage>
+          </FormGroup>
+
+          <FormGroup>
             <Field name="time" type="time" className="form-control field" />
             <ErrorMessage name="time">
               {(msg) => <p className="text-danger ">{msg}</p>}
@@ -55,7 +58,6 @@ const WhenForm = () => {
           </Button>
         </Form>
       </Formik>
-    
 
       <div className="form-navigation">
         <Link to="/">
