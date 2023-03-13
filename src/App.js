@@ -14,7 +14,7 @@ import Footer from "./components/Footer"
 function App() {
   return (
     <div className="App">
-      <Navigation/>
+      {/* <Navigation/> */}
       <Routes>
         <Route path="/" element={<StartForm />} />
         <Route path="duration" element={<DurationForm />} />

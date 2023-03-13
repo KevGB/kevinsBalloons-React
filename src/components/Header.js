@@ -6,7 +6,7 @@ const Header = (props) => {
   return (
     <Container className="container-fluid header " >
      <div className="overlay">
-      <h1>{headline}</h1>
+      <h1 className="start-headline">{headline}</h1>
       <p>{tagline}</p>
       <div className="header-btn-container" style={{display: {display}}}>
         <button className="btn header-btn header-subscribe bg-white">Subscribe</button>

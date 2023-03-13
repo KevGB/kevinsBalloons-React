@@ -1,6 +1,6 @@
 export const FAQDuration = () => {
   return (
-    <p>
+    <p className="faq-blurb">
       It depends on how many guests you have at the party. We estimate it takes
       about 5 minutes on average per guest, because while some guests want a
       simple balloon, others want more complex creations. Plus, if kids are

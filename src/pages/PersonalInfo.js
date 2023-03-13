@@ -1,46 +1,38 @@
 import { useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
-// import { validateForm } from "./validateForm";
+import { validateForm } from "./validateForm";
 import "../App.css";
 import { Link } from "react-router-dom";
-import { Label, FormGroup } from "reactstrap";
+import { Label } from "reactstrap";
+// import { Button } from "reactstrap";
 import { TandC } from "../components/TandC";
 
-const initialValues = {
-  firstName: "",
-  lastName: "",
-  email: "",
-  phone: "",
-  instagram: "",
-  referal: "",
-  notes: "",
-  tandc: false,
-};
-
 const PersonalInfo = () => {
+  const initialValues = {
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    instagram: "",
+    referal: "",
+    notes: "",
+  };
   const [formValues, updateFormValues] = useState(initialValues);
   const [tandcShow, toggleTandcShow] = useState(false);
-  const {
-    firstName,
-    lastName,
-    email,
-    phone,
-    instagram,
-    referal,
-    notes,
-    tandc,
-  } = formValues;
+  const { firstName, lastName, email, phone, instagram, referal, notes } =
+    formValues;
 
-  const handleSubmit = (e) => {
-    // e.preventDefault();
-    console.log(formValues);
-  };
+  // const handleSubmit = (e, formValues) => {
+  //   e.preventDefault();
+  //   console.log(formValues);
+  // };
   const handleChange = (e) => {
     console.log(e.target.value);
     updateFormValues({
       ...formValues,
       [e.target.name]: e.target.value,
     });
+    console.log(formValues);
   };
 
   const handleClick = () => {
@@ -54,8 +46,8 @@ const PersonalInfo = () => {
       <p>Your contact info</p>
       <Formik
         initialValues={initialValues}
-        // validate={validateForm}
-        onSubmit={handleSubmit}
+        validate={validateForm}
+        // onSubmit={handleSubmit}
       >
         <Form className="KB-form">
           <Field
@@ -136,8 +128,6 @@ const PersonalInfo = () => {
             <Field
               name="tandc"
               type="checkbox"
-              // value={tandc}
-              // onChange={handleChange}
               className="form-check-input field"
             />{" "}
             Do you agree to our{" "}
@@ -150,13 +140,14 @@ const PersonalInfo = () => {
             </ErrorMessage>
             {tandcShow && <TandC />}
           </Label>
-          <Link className="nav-link" to="/thankyou">
-            <button className="btn btn-primary" type="submit">
-              Finish
-            </button>
-          </Link>
+          {/* <Button type="submit">Submit</Button> */}
         </Form>
       </Formik>
+      <Link className="nav-link" to="/thankyou">
+        <button className="btn btn-primary" type="submit">
+          Finish
+        </button>
+      </Link>
       <div className="form-navigation">
         <Link to="/">
           <i className="fa fa-solid fa-circle" />

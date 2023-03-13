@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Modak&display=swap");
+
 .header {
   height: 85vh;
   width: 100%;
@@ -29,7 +31,7 @@
   font-size: 30px;
 }
 
-.overlay h1 {
+.start-headline {
   text-shadow: 2px 2px 2px #ffcf00;
   color: #ffb200;
   font-size: 80px;
@@ -64,10 +66,9 @@
 }
 
 h1 {
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
-    color: #ffb200;
-    font-weight: bold;
+  font-family: "Modak";
+  color: #ffb200;
+  font-weight: bold;
 }
 
 .KB-form {
@@ -81,7 +82,10 @@ h1 {
 .form {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   flex-direction: column;
+  min-height: 60vh;
+  padding-top: 3rem;
 }
 
 .field {
@@ -95,42 +99,45 @@ h1 {
   margin-bottom: 0;
 }
 
-.fa{
+.fa {
   margin: 12px 6px;
 }
 
-.fa-solid{
-  color:#03a5b6;
+.fa-solid {
+  color: #03a5b6;
 }
 
-.not-yet{
-  color:#ffb200;
-
+.not-yet {
+  color: #ffb200;
 }
 
-.form-navigation-active{
-box-shadow: 0 0 5px 1px #ffcf00, 0 0 5px 3px #ffcf00 inset ;
- border-radius: 50%;
+.form-navigation-active {
+  box-shadow: 0 0 5px 1px #ffcf00, 0 0 5px 3px #ffcf00 inset;
+  border-radius: 50%;
 }
 
-.text-danger{
+.text-danger {
   font-size: 12px;
   margin-top: -10px;
   margin-bottom: 0;
 }
 
-.next-button{
+.next-button {
   background-color: #03a5b6;
   font-size: 200px;
 }
 
-.tandc{
-  
+.tandc {
   background-color: rgb(226, 225, 225);
 }
 
-.range-display{
+.range-display {
   margin-left: 20px;
   font-size: 2rem;
   color: #ffb200;
+}
+
+.faq-blurb {
+  max-width: 400px;
+  background-color: rgb(226, 225, 225);
 }
