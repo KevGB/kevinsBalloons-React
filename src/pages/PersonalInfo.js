@@ -51,7 +51,7 @@ const PersonalInfo = () => {
               placeholder="Last Name"
               className="form-control field"
             />
-            
+
             <ErrorMessage name="lastName">
               {(msg) => <p className="text-danger">{msg}</p>}
             </ErrorMessage>
@@ -98,29 +98,20 @@ const PersonalInfo = () => {
           </Button>
         </Form>
       </Formik>
-      
+
       <div className="form-navigation">
         <Link to="/">
           <i className="fa fa-solid fa-circle" />
         </Link>
         <Link to="/info">
-          <i className="fa fa-solid fa-circle form-navigation-active" />
+          <i className="fa fa-solid fa-circle form-navigation-active" />,
         </Link>
-        <Link to="/duration">
-          <i className="fa fa-solid fa-circle not-yet" />
-        </Link>
-        <Link to="/when">
-          <i className="fa fa-solid fa-circle not-yet" />
-        </Link>
-        <Link to="/where">
-          <i className="fa fa-solid fa-circle not-yet" />
-        </Link>
-        <Link to="/guests">
-          <i className="fa fa-solid fa-circle not-yet" />
-        </Link>
-        <Link to="/additional">
-          <i className="fa fa-solid fa-circle not-yet" />
-        </Link>
+        <i className="fa fa-solid fa-circle not-yet" />
+        <i className="fa fa-solid fa-circle not-yet" />
+        <i className="fa fa-solid fa-circle not-yet" />
+        <i className="fa fa-solid fa-circle not-yet" />
+
+        <i className="fa fa-solid fa-circle not-yet" />
       </div>
     </div>
   );

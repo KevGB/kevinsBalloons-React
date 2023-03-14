@@ -9,7 +9,6 @@ import GuestsForm from "./pages/GuestForm";
 import PersonalInfo from "./pages/PersonalInfo";
 import ThankYouPage from "./pages/ThankYouPage";
 import AdditionalInfo from "./pages/AdditionalInfo";
-import Footer from "./components/Footer"
 
 function App() {
   return (
@@ -24,7 +23,7 @@ function App() {
         <Route path="additional" element={<AdditionalInfo />} />
         <Route path="thankyou" element={<ThankYouPage />} />
       </Routes>
-      <Footer/>
+    
     </div>
   );
 }

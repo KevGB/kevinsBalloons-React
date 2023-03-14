@@ -79,9 +79,7 @@ const GuestsForm = () => {
         <Link to="/guests">
           <i className="fa fa-solid fa-circle form-navigation-active" />
         </Link>
-        <Link to="/additional">
           <i className="fa fa-solid fa-circle not-yet" />
-        </Link>
       </div>
     </div>
   );
@@ -89,22 +87,4 @@ const GuestsForm = () => {
 
 export default GuestsForm;
 
-// import { Formik, Field, Form } from "formik";
-// import { Label, FormGroup, Button } from "reactstrap";
-// import { Link, useNavigate } from "react-router-dom";
 
-// const GuestsForm = () => {
-
-//   const { numGuests } = value;
-
-//   const navigate = useNavigate();
-
-//   const initialValues = {
-//     numGuests: 0,
-//     ageRange: "",
-//   };
-
-//   const handleSubmit = (values) => {
-//     console.log(values);
-//     navigate("/additonal");
-//   };

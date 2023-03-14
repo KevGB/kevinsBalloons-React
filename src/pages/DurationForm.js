@@ -9,7 +9,7 @@ import { Button } from "reactstrap";
 const DurationForm = () => {
   const [faqShow, toggleFaqShow] = useState(false);
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const handleClick = () => {
     toggleFaqShow(!faqShow);
@@ -17,7 +17,7 @@ const DurationForm = () => {
 
   const handleSubmit = (values) => {
     console.log(JSON.stringify(values));
-    navigate("/when")
+    navigate("/when");
   };
 
   return (
@@ -67,7 +67,7 @@ const DurationForm = () => {
           </Button>
         </Form>
       </Formik>
-     
+
       <div className="form-navigation">
         <Link to="/">
           <i className="fa fa-solid fa-circle" />
@@ -78,18 +78,14 @@ const DurationForm = () => {
         <Link to="/duration">
           <i className="fa fa-solid fa-circle form-navigation-active" />
         </Link>
-        <Link to="/when">
-          <i className="fa fa-solid fa-circle not-yet" />
-        </Link>
-        <Link to="/where">
-          <i className="fa fa-solid fa-circle not-yet" />
-        </Link>
-        <Link to="/guests">
-          <i className="fa fa-solid fa-circle not-yet" />
-        </Link>
-        <Link to="/additional">
-          <i className="fa fa-solid fa-circle not-yet" />
-        </Link>
+
+        <i className="fa fa-solid fa-circle not-yet" />
+
+        <i className="fa fa-solid fa-circle not-yet" />
+
+        <i className="fa fa-solid fa-circle not-yet" />
+
+        <i className="fa fa-solid fa-circle not-yet" />
       </div>
     </div>
   );

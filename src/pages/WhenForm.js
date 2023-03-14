@@ -72,15 +72,12 @@ const WhenForm = () => {
         <Link to="/when">
           <i className="fa fa-solid fa-circle form-navigation-active" />
         </Link>
-        <Link to="/where">
-          <i className="fa fa-solid fa-circle not-yet" />
-        </Link>
-        <Link to="/guests">
-          <i className="fa fa-solid fa-circle not-yet" />
-        </Link>
-        <Link to="/additional">
-          <i className="fa fa-solid fa-circle not-yet" />
-        </Link>
+
+        <i className="fa fa-solid fa-circle not-yet" />
+
+        <i className="fa fa-solid fa-circle not-yet" />
+
+        <i className="fa fa-solid fa-circle not-yet" />
       </div>
     </div>
   );
