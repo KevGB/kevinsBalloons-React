@@ -1,4 +1,3 @@
-import { Container } from "reactstrap";
 import { useNavigate } from "react-router-dom";
 
 const Header = (props) => {
@@ -11,7 +10,7 @@ const Header = (props) => {
   };
 
   return (
-    <Container className="container-fluid header ">
+    <div className=" header ">
       <div className="overlay">
         <h1 className="start-headline">{headline}</h1>
         <p>{tagline}</p>
@@ -27,7 +26,7 @@ const Header = (props) => {
           </button>
         </div>
       </div>
-    </Container>
+    </div>
   );
 };
 
