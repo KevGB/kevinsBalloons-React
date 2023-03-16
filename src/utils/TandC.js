@@ -13,8 +13,7 @@ export const TandC = () => {
           for discounts, so we won't spam up your inbox
         </li>
         <li>All sales are final. There are no refunds.</li>
-        <li>There are no cancellations or rescheduling.</li>
-        <li>There are no refunds for popped balloons.</li>
+        <li>There are no refunds for popped balloons, but if time allows you can often get a balloon repaired or replaced</li>
         <li>
           Delivery windows are estimates and we cannot guarantee delivery times.
         </li>
@@ -29,11 +28,7 @@ export const TandC = () => {
           agents, volunteers, employees, friends, and relatives.
         </li>
         <li>
-          We cannot be held responsible if a client, guest, relative, or friend
-          contracts COVID-19 or any other illness as a result or interaction
-          with The Balloon Guy and all agents, volunteers, employees, friends,
-          and relatives. You agree to indemnify and hold harmless The Balloon
-          Guy from any claims surround COVID-19.
+          You agree to indemnify and hold harmless Kevin's Balloons from any claims surround COVID-19.
         </li>
       </ol>
     </div>
